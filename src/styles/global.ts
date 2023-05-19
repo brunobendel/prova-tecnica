@@ -14,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+    background-image: url("/img/background.jpg");
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;  
   }
 
   body {
