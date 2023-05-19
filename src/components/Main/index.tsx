@@ -1,11 +1,14 @@
+import NotLoggedIn from 'components/NotLoggedIn'
 import * as S from './styles'
 
 const Main = ({}) => {
-  console.log(process.env.NEXT_PUBLIC_KEY, 'aqui')
- 
+const userIsLogged = false
 return (
   <S.Wrapper>
     <S.StyledPanel>
+      {userIsLogged ? (<></>) : (
+      <NotLoggedIn/>
+      )}
     </S.StyledPanel>
   </S.Wrapper>
   )
