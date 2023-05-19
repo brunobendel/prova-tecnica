@@ -1,14 +1,19 @@
 import NotLoggedIn from 'components/NotLoggedIn'
 import * as S from './styles'
+import { useAuth } from 'hooks/Auth'
+import Loading from 'components/Loading'
 
 const Main = ({}) => {
-const userIsLogged = false
+  const {isLogged, isLoading }=useAuth()
 return (
   <S.Wrapper>
     <S.StyledPanel>
-      {userIsLogged ? (<></>) : (
+      {isLoading ?<Loading/> :(<>
+        {isLogged ? (<></>) : (
       <NotLoggedIn/>
       )}
+      </>)}
+    
     </S.StyledPanel>
   </S.Wrapper>
   )
